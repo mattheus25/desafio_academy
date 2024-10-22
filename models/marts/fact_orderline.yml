@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: fact_orderline 
+    description: This table contains order itens information. 
+
+    columns:
+      - name: sk_orderline_id
+        description: This is a unique identifier for each order item quantity
+        tests:
+          - unique
+          - not_null
+
+      - name: order_date 
+        description: date in which order item was purchased.
+        tests:
+          - not_null
+
+      - name: order_id 
+        description: order identification.
+        tests:
+          - not_null
+
+      - name: order_detail_id
+        description: order item identification
+        tests:
+          - not_null
+
+      - name: customer_id 
+        description: customer identification, fk to customers table.
+        tests:
+          - not_null
+        
+      - name: territoryid
+        description: territory identification.
+
+
+      - name: bill_to_address_id 
+        description: customer residence.
+        tests:
+          - not_null
+
+      - name: credicard_id 
+        description: card identification.
+
+      - name: sales_person_id 
+        description: employee who sold product, fk to employee
+
+      - name: order_qtd
+        description: number of type of item.
+        tests:
+          - not_null
+
+      - name: unit_price 
+        description: price of each item.
+        tests:
+          - not_null
+
+      - name: unit_price_discount 
+        description: price of each unit.
+        tests:
+          - not_null
+
+          
