@@ -100,4 +100,13 @@ sources:
           - name: salesreasonid
             description: id representing sales reason.
             tests:
+              - not_null
+      - name: creditcard
+        description: table refers to card information.
+        columns:
+          - name: creditcardid
+            description: id representing each card type.
+            tests:
+              - unique
               - not_null    
+    

@@ -10,7 +10,7 @@ with
         select
             businessentityid
             ,persontype
-            ,CONCAT(firstname||''||lastname) as full_name                
+            ,CONCAT(firstname,' ',lastname) as full_name                
         from persons 
     )
     
