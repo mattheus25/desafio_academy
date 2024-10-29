@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_products 
+    description: This table contains products information. 
+
+    columns:
+      - name: product_id
+        description: primary key for product table
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name 
+        description: name of the product.
+        tests:
+          - not_null
+
+
+
+          

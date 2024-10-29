@@ -1,0 +1,112 @@
+version: 2
+
+sources:
+  - name: source
+    description: dados brutos das adventure works 
+    database: FEA24_9
+    schema: raw_adventure_works
+    tables:
+      - name: salesorderheader
+        description: General sales order information.
+        columns:
+          - name: salesorderid
+            description: Primary key of the salesorderheader table
+            tests:
+              - unique
+              - not_null
+      - name: salesorderdetail
+        description: individuals products associated with a specific sales order.
+        columns:
+          - name: salesorderdetailid
+            description: Primary key of the salesorderdetail table
+            tests:
+              - unique
+              - not_null
+      - name: customer
+        description: current customer information
+        columns:
+          - name: customerid
+            description: Primary key of the customer table
+            tests:
+              - unique
+              - not_null
+      - name: salesreason
+        description: Lookup table of customer purchase reasons.
+        columns:
+          - name: salesreasonid
+            description: Primary key of the salesreason table.
+            tests:
+              - unique
+              - not_null
+      - name: salesperson 
+        description: Sales representative current information.
+        columns:
+          - name: businessentityid
+            description: Primary key of the salesreason table.
+            tests:
+              - unique
+              - not_null
+      - name: employee
+        description: Employee information such as salary, department, and title.
+        columns:
+          - name: businessentityid
+            description: Primary key of the employee's table.
+            tests:
+              - unique
+              - not_null
+      - name: stateprovince
+        description: State and province lookup table.
+        columns:
+          - name: stateprovinceid
+            description: Primary key of the stateprovinceid table.
+            tests:
+              - unique
+              - not_null
+      - name: countryregion
+        description: Lookup table containing the ISO standard codes for countries and regions.
+        columns:
+          - name: countryregioncode
+            description: Primary key of the salesreason table.
+            tests:
+              - unique
+              - not_null    
+      - name: product
+        description: General informations.
+        columns:
+          - name: productid
+            description: primary key of the products table.
+            tests:
+              - unique
+              - not_null    
+      - name: person
+        description: 'Human beings involved with AdventureWorks: employees, customer contacts, and vendor contacts.'
+        columns:
+          - name: businessentityid
+            description: Primary key of the salesreason table.
+            tests:
+              - unique
+              - not_null    
+      - name: address
+        description: Street address information for customers, employees, and vendors.
+        columns:
+          - name: addressid
+            description: 	Primary key for Address records.
+            tests:
+              - unique
+              - not_null    
+      - name: salesorderheadersalesreason
+        description: Cross-reference table mapping sales orders to sales reason codes.
+        columns:
+          - name: salesreasonid
+            description: id representing sales reason.
+            tests:
+              - not_null
+      - name: creditcard
+        description: table refers to card information.
+        columns:
+          - name: creditcardid
+            description: id representing each card type.
+            tests:
+              - unique
+              - not_null    
+    
