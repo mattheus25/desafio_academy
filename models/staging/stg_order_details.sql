@@ -1,4 +1,4 @@
-{{ config(materialized='view') }}
+
 
 with
     order_details as (
