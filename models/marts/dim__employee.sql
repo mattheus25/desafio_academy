@@ -1,22 +1,22 @@
 with
     employees as (
         select *
-        from {{ ref('stg_employee') }}
+        from {{ ref('stg__employee') }}
     )
 
     , person as (
         select *
-        from {{ ref('stg_person') }}
+        from {{ ref('stg__person') }}
     )
 
     , orders as (
         select * 
-        from {{ ref('stg_ordersales') }}
+        from {{ ref('stg__ordersales') }}
     )
     
     , salesperson as (
         select *
-        from {{ ref('stg_salesperson') }}
+        from {{ ref('stg__salesperson') }}
     )
     
 

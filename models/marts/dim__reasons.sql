@@ -1,12 +1,12 @@
 with 
     sales_reason_id as (
         select *
-        from {{ ref('stg_sales_reason_id') }}
+        from {{ ref('stg__sales_reason_id') }}
     )
 
     , sales_reason as (
         select * 
-        from {{ ref('stg_salesreason') }}
+        from {{ ref('stg__salesreason') }}
     )
 
     , reason as (

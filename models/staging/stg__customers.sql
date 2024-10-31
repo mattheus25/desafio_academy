@@ -6,11 +6,11 @@ with
         from {{ source('source', 'customer') }}
     )
     
-    ,customer as (
+    , customer as (
         select
              customerid as customer_id
-            ,personid as person_id
-            ,territoryid as territory_id
+            , personid as person_id
+            , territoryid as territory_id
         from customers
     )
     

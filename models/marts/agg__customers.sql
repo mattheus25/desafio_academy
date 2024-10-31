@@ -1,37 +1,37 @@
 with 
     customers as (
         select *
-        from {{ ref('stg_customers') }}
+        from {{ ref('stg__customers') }}
     )
 
     , person as (
         select *
-        from {{ ref('stg_person') }}
+        from {{ ref('stg__person') }}
     )
     
     , orders as (
         select *
-        from {{ ref('stg_ordersales') }}
+        from {{ ref('stg__ordersales') }}
     )
 
     , order_itens as (
         select *
-        from {{ ref('stg_order_details') }}
+        from {{ ref('stg__order_details') }}
     )
 
     , address as (
         select *
-        from {{ ref('stg_address') }}
+        from {{ ref('stg__address') }}
     )
 
     , state as (
         select *
-        from {{ ref('stg_state_province') }}
+        from {{ ref('stg__state_province') }}
     )
 
     , country as (
         select*
-        from {{ ref('stg_country_region') }}
+        from {{ ref('stg__country_region') }}
     )
 
     , customer as (

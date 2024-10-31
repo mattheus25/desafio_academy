@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: dim_customers 
+  - name: agg_customers 
     description: This table contains information about customers. 
 
     columns:
