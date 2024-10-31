@@ -1,7 +1,7 @@
 with 
     products as (
         select *
-        from {{ ref('stg_products') }}
+        from {{ ref('stg__products') }}
     )
 
     , product as (

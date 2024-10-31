@@ -1,23 +1,23 @@
 with 
     country as (
         select*
-        from {{ ref('stg_country_region') }}
+        from {{ ref('stg__country_region') }}
     )
 
     , state as (
         select *
-        from {{ ref('stg_state_province') }}
+        from {{ ref('stg__state_province') }}
     )
 
     , address as (
         select *
-        from {{ ref('stg_address') }}
+        from {{ ref('stg__address') }}
     )
 
     , orders as (
         select 
         distinct bill_to_address_id 
-        from {{ ref('stg_ordersales') }}
+        from {{ ref('stg__ordersales') }}
     )
 
     , filtered_customer_location as (

@@ -1,17 +1,17 @@
 with   
     orders as(
         select *
-        from {{ref('stg_ordersales')}}
+        from {{ref('stg__ordersales')}}
     )
 
     , order_itens as (
         select *
-        from {{ ref('stg_order_details') }}
+        from {{ ref('stg__order_details') }}
     )
 
     , card as (
         select *
-        from {{ ref('stg_creditcard') }}
+        from {{ ref('stg__creditcard') }}
     )
 
 

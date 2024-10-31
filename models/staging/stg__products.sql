@@ -1,14 +1,12 @@
-
-
 with
     products as (
         select*
         FROM {{ source('source', 'product') }}
     )
-    ,product as (
+    , product as (
         select
             productid as product_id
-            ,name as product_name            
+            , name as product_name            
         from products
     )
     
