@@ -36,7 +36,7 @@ with
 
     , customer as (
         select
-            customers.customer_id as customer_id
+            distinct customers.customer_id as customer_id
             , full_name
             , country.country_name as country_name 
             , state.state_name as state_name 
@@ -47,7 +47,6 @@ with
         left join address on orders.bill_to_address_id = address.address_id
         left join state on address.state_province_id = state.state_province_id
         left join country on state.country_region_code = country.country_region_code
-        left join order_itens on orders.order_id = order_itens.order_id
     )
 
 select * from customer 
