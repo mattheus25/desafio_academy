@@ -5,7 +5,7 @@ models:
     description: This table contains order itens information. 
 
     columns:
-      - name: sk_orderline_id
+      - name: order_detail_id
         description: This is a unique identifier for each order item quantity
         tests:
           - unique
@@ -21,30 +21,15 @@ models:
         tests:
           - not_null
 
-      - name: order_detail_id
-        description: order item identification
-        tests:
-          - not_null
-
       - name: customer_id 
         description: customer identification, fk to customers table.
         tests:
           - not_null
         
-      - name: territoryid
-        description: territory identification.
-
-
       - name: bill_to_address_id 
         description: customer residence.
         tests:
           - not_null
-
-      - name: credicard_id 
-        description: card identification.
-
-      - name: sales_person_id 
-        description: employee who sold product, fk to employee
 
       - name: order_qtd
         description: number of type of item.
