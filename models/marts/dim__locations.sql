@@ -31,11 +31,10 @@ with
             , address.city
             , address.full_address
         from orders 
-        join address on orders.bill_to_address_id = address.address_id
-        join state on address.state_province_id = state.state_province_id
-        join country on state.country_region_code = country.country_region_code
+        left join address on orders.bill_to_address_id = address.address_id
+        left join state on address.state_province_id = state.state_province_id
+        left join country on state.country_region_code = country.country_region_code
     )
 
 select * from filtered_customer_location
- 
-    
+

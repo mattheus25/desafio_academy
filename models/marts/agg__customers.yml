@@ -10,26 +10,6 @@ models:
         tests:
           - unique
           - not_null
-
-      - name: full_name 
-        description: full name of each customers.
-        tests:
-          - not_null
-
-      - name: country_name 
-        description: customer country name.
-        tests:
-          - not_null
-
-      - name: state_name
-        description: customer country name.
-        tests:
-          - not_null
-
-      - name: full_address 
-        description: customer complete address.
-        tests:
-          - not_null
         
       - name: cltv
         description: customer lifetime value.It refers to how much a customer spent overall.

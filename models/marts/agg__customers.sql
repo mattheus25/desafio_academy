@@ -37,10 +37,6 @@ with
     , customer as (
         select
             customers.customer_id as customer_id
-            , full_name
-            , country.country_name as country_name 
-            , state.state_name as state_name 
-            , address.full_address as full_address
             , sum((order_qtd * unit_price) * (1 - unit_price_discount)) as cltv
             , min(order_date) as first_purchase
             , max(order_date) as last_purchase
@@ -51,22 +47,13 @@ with
         join state on address.state_province_id = state.state_province_id
         join country on state.country_region_code = country.country_region_code
         join order_itens on orders.order_id = order_itens.order_id
-        group by 
-            customers.customer_id
-            , full_name
-            , country.country_name
-            , state.state_name
-            , address.full_address
+        group by customers.customer_id
 
     )
 
     , customer_details as (
         select 
             customer_id 
-            , full_name
-            , country_name
-            , state_name
-            , full_address
             , round(cltv,2) as cltv
             , first_purchase
             , last_purchase
