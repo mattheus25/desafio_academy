@@ -47,6 +47,7 @@ with
         left join address on orders.bill_to_address_id = address.address_id
         left join state on address.state_province_id = state.state_province_id
         left join country on state.country_region_code = country.country_region_code
+        where full_name is not null
     )
 
 select * from customer 
